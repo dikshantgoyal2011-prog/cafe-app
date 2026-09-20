@@ -6,7 +6,7 @@
     <title>Hungry Birds Cafe</title>
     <meta
       name="description"
-      content="Hungry Birds Cafe mobile-first menu app with food ordering, delivery, and cafe favorites."
+      content="Hungry Birds Cafe mobile app with menu, cart, delivery details, and checkout flow."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,78 +19,217 @@
   <body>
     <div class="app-shell">
       <header class="top-header">
-        <div class="header-row">
-          <div class="brand-box">
+        <div class="top-row">
+          <div class="brand-wrap">
             <div class="brand-mark">HB</div>
             <div>
-              <span class="brand-tag">Cafe & Kitchen</span>
+              <span class="brand-small">Cafe & Kitchen</span>
               <h1>Hungry Birds</h1>
             </div>
           </div>
-
-          <button class="menu-button" type="button" aria-label="Open menu">☰</button>
+          <button class="icon-button" type="button" aria-label="Notifications">🔔</button>
         </div>
 
-        <div class="promo-banner">
-          <span>🚚 Home Delivery</span>
-          <strong>₹30 Extra</strong>
+        <div class="location-bar">
+          <span>📍</span>
+          <p>Deliver to: Downtown Market</p>
         </div>
       </header>
 
-      <main class="content">
-        <section class="hero-card">
-          <div class="hero-text">
+      <main class="screen-container">
+        <section class="screen active" data-screen="home">
+          <div class="hero-card">
             <p class="eyebrow">Fast • Fresh • Tasty</p>
-            <h2>Craving something delicious?</h2>
+            <h2>Order your favorite bites</h2>
+            <div class="hero-actions">
+              <button class="primary-btn" type="button" data-nav="menu">Order Now</button>
+              <button class="ghost-btn" type="button">Offers</button>
+            </div>
           </div>
-          <div class="hero-actions">
-            <button class="primary-btn" type="button">Order Now</button>
-            <button class="ghost-btn" type="button">View Menu</button>
+
+          <div class="feature-grid">
+            <div class="feature-box accent">
+              <span>⚡</span>
+              <div>
+                <strong>30 min</strong>
+                <small>Fast delivery</small>
+              </div>
+            </div>
+            <div class="feature-box">
+              <span>⭐</span>
+              <div>
+                <strong>4.9/5</strong>
+                <small>Top rated</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-row">
+            <h3>Featured</h3>
+            <button class="link-btn" type="button" data-nav="menu">See all</button>
+          </div>
+
+          <div class="featured-list">
+            <article class="featured-item">
+              <div class="featured-image image-one"></div>
+              <div class="featured-info">
+                <h4>Paneer Tikka Burger</h4>
+                <div class="mini-row">
+                  <span>₹90</span>
+                  <button class="tiny-btn" type="button" data-name="Paneer Tikka Burger" data-price="90">Add</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="featured-item">
+              <div class="featured-image image-two"></div>
+              <div class="featured-info">
+                <h4>Cold Coffee</h4>
+                <div class="mini-row">
+                  <span>₹70</span>
+                  <button class="tiny-btn" type="button" data-name="Cold Coffee" data-price="70">Add</button>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
-        <section class="quick-picks">
-          <div class="section-head">
-            <h3>Popular Picks</h3>
-            <a href="#menu">See all</a>
+        <section class="screen" data-screen="menu">
+          <div class="toolbar">
+            <div class="section-row compact">
+              <h3>Menu</h3>
+              <button class="link-btn" type="button">Filter</button>
+            </div>
+
+            <div class="chip-row">
+              <button class="chip active" type="button" data-filter="all">All</button>
+              <button class="chip" type="button" data-filter="maggie">Maggie</button>
+              <button class="chip" type="button" data-filter="pizza">Pizza</button>
+              <button class="chip" type="button" data-filter="burger">Burger</button>
+              <button class="chip" type="button" data-filter="sandwich">Sandwich</button>
+              <button class="chip" type="button" data-filter="coffee">Coffee</button>
+              <button class="chip" type="button" data-filter="shakes">Shakes</button>
+            </div>
           </div>
 
-          <div class="chip-row">
-            <button class="chip active" type="button">All</button>
-            <button class="chip" type="button">Maggie</button>
-            <button class="chip" type="button">Pizza</button>
-            <button class="chip" type="button">Burger</button>
-            <button class="chip" type="button">Shakes</button>
-          </div>
-        </section>
-
-        <section class="menu-section" id="menu">
-          <div class="section-head">
-            <h3>Menu</h3>
-            <span class="badge-live">Live</span>
-          </div>
           <div id="menu-items" class="menu-list" aria-live="polite"></div>
+        </section>
+
+        <section class="screen" data-screen="cart">
+          <div class="section-row compact">
+            <h3>Your Cart</h3>
+            <span class="muted-text" id="cart-count-small">0 items</span>
+          </div>
+
+          <div id="cart-items" class="cart-list"></div>
+
+          <div class="checkout-card">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="subtotal">₹0.00</strong>
+            </div>
+            <div class="summary-row">
+              <span>Delivery</span>
+              <strong>₹30</strong>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <strong id="grand-total">₹30.00</strong>
+            </div>
+            <button class="primary-btn full-width" type="button" data-nav="checkout">Place Order</button>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="checkout">
+          <div class="section-row compact">
+            <h3>Checkout</h3>
+          </div>
+
+          <div class="checkout-form">
+            <label>
+              Name
+              <input type="text" value="Aarav" />
+            </label>
+            <label>
+              Phone
+              <input type="tel" value="9460783298" />
+            </label>
+            <label>
+              Address
+              <textarea rows="3">24 Green Park, Downtown Market</textarea>
+            </label>
+            <label>
+              Payment method
+              <select>
+                <option>Cash on Delivery</option>
+                <option>UPI</option>
+                <option>Card</option>
+              </select>
+            </label>
+          </div>
+
+          <button class="primary-btn full-width" type="button" id="place-order-btn">Confirm Order</button>
+        </section>
+
+        <section class="screen" data-screen="account">
+          <div class="profile-card">
+            <div class="avatar">HB</div>
+            <div>
+              <h3>Hungry Birds Member</h3>
+              <p>Member since 2024</p>
+            </div>
+          </div>
+
+          <div class="account-list">
+            <div class="account-item">
+              <span>📞</span>
+              <p>9460783298</p>
+            </div>
+            <div class="account-item">
+              <span>🎁</span>
+              <p>Offers and rewards</p>
+            </div>
+            <div class="account-item">
+              <span>🛎️</span>
+              <p>Track active order</p>
+            </div>
+          </div>
         </section>
       </main>
 
-      <aside class="cart-panel" aria-label="Order summary">
-        <div class="cart-top">
-          <h3>Cart</h3>
-          <span id="cart-count">0 items</span>
-        </div>
+      <nav class="bottom-nav" aria-label="Main navigation">
+        <button class="nav-btn active" type="button" data-target="home">
+          <span>🏠</span>
+          <small>Home</small>
+        </button>
+        <button class="nav-btn" type="button" data-target="menu">
+          <span>🍽️</span>
+          <small>Menu</small>
+        </button>
+        <button class="nav-btn" type="button" data-target="cart">
+          <span>🛒</span>
+          <small>Cart</small>
+        </button>
+        <button class="nav-btn" type="button" data-target="account">
+          <span>👤</span>
+          <small>Profile</small>
+        </button>
+      </nav>
+    </div>
 
-        <div id="cart-items" class="cart-items">
-          <p class="empty-cart">Your cart is empty.</p>
-        </div>
-
-        <div class="cart-summary">
-          <div class="summary-row">
-            <span>Total</span>
-            <strong id="subtotal">₹0.00</strong>
+    <div id="item-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <button class="close-modal" type="button" aria-label="Close">✕</button>
+        <div id="modal-image" class="modal-image"></div>
+        <div class="modal-body">
+          <h4 id="modal-name">Item</h4>
+          <p id="modal-description">Description</p>
+          <div class="modal-footer">
+            <strong id="modal-price">₹0</strong>
+            <button class="primary-btn" type="button" id="modal-add">Add to cart</button>
           </div>
-          <button type="button" class="checkout-btn">Checkout</button>
         </div>
-      </aside>
+      </div>
     </div>
 
     <script src="script.js"></script>
