@@ -1,191 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Velvet Bean Cafe</title>
-    <meta
-      name="description"
-      content="Velvet Bean Cafe offers artisanal coffee, fresh pastries and comforting meals in a warm modern setting."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="container nav-wrap">
-        <div class="brand" aria-label="Velvet Bean Cafe logo">
-          <div class="brand-mark">VB</div>
-          <div>
-            <p class="brand-name">Velvet Bean</p>
-            <span class="brand-tag">Cafe & Kitchen</span>
-          </div>
-        </div>
-
-        <nav class="nav" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#menu">Menu</a>
-          <a href="#experience">Experience</a>
-          <a href="#visit">Visit</a>
-        </nav>
-
-        <button class="cta-button" type="button">Book a Table</button>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ee4134" />
+  <title>Hungry Birds Cafe</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand"><span class="logo">HB</span><div><small>Cafe & Kitchen</small><h1>Hungry Birds</h1></div></div>
+      <a class="phone" href="tel:9460783298">☎</a>
     </header>
-
-    <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Freshly brewed. Inspired daily.</p>
-            <h1>Find your perfect cup and cozy corner.</h1>
-            <p class="subtext">
-              Discover signature coffees, handcrafted pastries, and comforting meals made with local ingredients and a lot of heart.
-            </p>
-
-            <div class="hero-actions">
-              <button class="primary" type="button">Order Now</button>
-              <button class="secondary" type="button">See Menu</button>
-            </div>
-
-            <div class="hero-stats" aria-label="Cafe statistics">
-              <div>
-                <strong>4.9/5</strong>
-                <span>Guest rating</span>
-              </div>
-              <div>
-                <strong>12k+</strong>
-                <span>Orders served</span>
-              </div>
-              <div>
-                <strong>7 min</strong>
-                <span>Average pickup</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-visual" aria-label="Coffee and pastry display">
-            <div class="visual-card card-large">
-              <span class="tag">Chef's pick</span>
-              <h3>Hazelnut Latte</h3>
-              <p>Velvety espresso, roasted hazelnut cream, and a hint of cinnamon.</p>
-              <div class="price-row">
-                <strong>$6.50</strong>
-                <button type="button" class="mini-button" data-name="Hazelnut Latte" data-price="6.5">Add</button>
-              </div>
-            </div>
-
-            <div class="visual-card card-small">
-              <div class="food-badge">Freshly baked</div>
-              <h4>Berry Scone</h4>
-              <p>Buttery, golden, and packed with wild berries.</p>
-              <span>$4.20</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="highlights" id="about">
-        <div class="container highlight-grid">
-          <article>
-            <div class="icon">☕</div>
-            <h3>Artisan Coffee</h3>
-            <p>Single-origin beans roasted for sweet notes and a rich finish.</p>
-          </article>
-          <article>
-            <div class="icon">🥐</div>
-            <h3>Fresh Bakery</h3>
-            <p>Morning pastries baked daily to pair beautifully with every brew.</p>
-          </article>
-          <article>
-            <div class="icon">🍽️</div>
-            <h3>Comfort Food</h3>
-            <p>Hearty brunch favorites and light bites for every time of day.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="menu" id="menu">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow dark">Menu favorites</p>
-            <h2>Made to savor</h2>
-          </div>
-
-          <div class="menu-controls" aria-label="Menu category filters">
-            <button type="button" class="filter active" data-filter="all">All</button>
-            <button type="button" class="filter" data-filter="coffee">Coffee</button>
-            <button type="button" class="filter" data-filter="pastry">Pastry</button>
-            <button type="button" class="filter" data-filter="brunch">Brunch</button>
-          </div>
-
-          <div id="menu-items" class="menu-grid" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <section class="experience" id="experience">
-        <div class="container experience-grid">
-          <div class="experience-copy">
-            <p class="eyebrow dark">The Velvet Bean experience</p>
-            <h2>Warm, modern, and designed for slow moments.</h2>
-            <ul>
-              <li>Soft ambient music and natural light</li>
-              <li>Locally sourced ingredients from neighborhood makers</li>
-              <li>Free Wi‑Fi, comfy seating, and weekend brunch events</li>
-            </ul>
-          </div>
-
-          <div class="experience-card">
-            <div class="mini-panel">
-              <span>Today’s specials</span>
-              <h3>House blend tasting</h3>
-              <p>Sample three signature pours with a pastry pairing.</p>
-              <strong>$12.00</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="reservation" id="visit">
-        <div class="container reservation-box">
-          <div>
-            <p class="eyebrow dark">Visit us</p>
-            <h2>Stop by for your next coffee ritual.</h2>
-          </div>
-
-          <div class="visit-info">
-            <p>18 Willow Lane, Downtown</p>
-            <p>Mon–Sun · 7:00 AM – 8:30 PM</p>
-            <p>(555) 234-6789</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <aside class="cart-panel" aria-label="Order summary">
-      <div class="cart-header">
-        <h3>Your Order</h3>
-        <span id="cart-count">0 items</span>
-      </div>
-
-      <div id="cart-items" class="cart-items">
-        <p class="empty-cart">Your cart is empty. Add a favorite from the menu.</p>
-      </div>
-
-      <div class="cart-summary">
-        <div>
-          <span>Subtotal</span>
-          <strong id="subtotal">$0.00</strong>
-        </div>
-        <button type="button" class="checkout-button">Checkout</button>
-      </div>
-    </aside>
-
-    <script src="script.js"></script>
-  </body>
+    <div class="delivery">🚚 Home delivery available <strong>Delivery charge ₹30</strong></div>
+    <section class="hero"><small>FAST • FRESH • TASTY</small><h2>Order your favorite bites</h2><button data-scroll="menu">Order now</button></section>
+    <section class="section" id="menu">
+      <div class="section-title"><h3>Our menu</h3><span>₹ Indian prices</span></div>
+      <div class="chips"><button class="active" data-category="all">All</button><button data-category="maggie">Maggie</button><button data-category="pizza">Pizza</button><button data-category="burger">Burger</button><button data-category="sandwich">Sandwich</button><button data-category="coffee">Coffee</button><button data-category="shakes">Shakes</button></div>
+      <div id="menu-items" class="menu-list"></div>
+    </section>
+    <section class="cart section"><div class="section-title"><h3>Your cart</h3><span id="count">0 items</span></div><div id="cart-items"><p class="empty">Add something delicious from the menu.</p></div><div class="total"><span>Total including ₹30 delivery</span><strong id="total">₹30</strong></div><button id="checkout">Checkout</button></section>
+  </main>
+  <script src="script.js"></script>
+</body>
 </html>
